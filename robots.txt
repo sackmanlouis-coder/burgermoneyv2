@@ -1,0 +1,64 @@
+# robots.txt for https://www.burgermoney.org/
+# Public charity-memecoin info site. AI crawlers and agents are welcome.
+
+User-agent: *
+Allow: /
+
+# AI / LLM crawlers — explicit allow
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Discovery
+Sitemap: https://www.burgermoney.org/sitemap.xml
+
+# AI-friendly summaries
+# llms.txt:      https://www.burgermoney.org/llms.txt
+# llms-full.txt: https://www.burgermoney.org/llms-full.txt
+# Agent card:    https://www.burgermoney.org/.well-known/agent.json
+# Token JSON:    https://www.burgermoney.org/.well-known/token.json
+# Farcaster:     https://www.burgermoney.org/.well-known/farcaster.json

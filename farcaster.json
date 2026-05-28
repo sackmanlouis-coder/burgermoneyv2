@@ -1,0 +1,30 @@
+{
+  "_comment": "Sign the accountAssociation block with the project's Farcaster custody wallet using the Farcaster manifest tool at https://farcaster.xyz/~/developers/mini-apps/manifest — paste the resulting header/payload/signature in below. Until signed, social previews and rich embeds will still work; only 'Add Mini App' attribution requires the signature.",
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Burger Money",
+    "iconUrl": "https://www.burgermoney.org/icon-512.png",
+    "homeUrl": "https://www.burgermoney.org/",
+    "imageUrl": "https://www.burgermoney.org/og-burgers.png",
+    "buttonTitle": "🍔 Buy $BURGERS",
+    "splashImageUrl": "https://www.burgermoney.org/icon-512.png",
+    "splashBackgroundColor": "#0a0a0f",
+    "subtitle": "Charity memecoin on Base",
+    "description": "Charity-first memecoin on Base. All creator revenue funds hunger-relief donations and $BURGERS buyback-and-burn.",
+    "primaryCategory": "finance",
+    "tags": ["memecoin", "base", "charity", "defi", "flaunch"],
+    "tagline": "The memecoin feeding the hungry",
+    "ogTitle": "Burger Money ($BURGERS)",
+    "ogDescription": "Charity memecoin on Base. Every trade funds a meal.",
+    "ogImageUrl": "https://www.burgermoney.org/og-burgers.png",
+    "noindex": false
+  },
+  "baseBuilder": {
+    "allowedAddresses": []
+  }
+}

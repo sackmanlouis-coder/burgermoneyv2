@@ -1,0 +1,146 @@
+# Burger Money ($BURGERS) — Full LLM Reference
+
+> Single-document export of everything on burgermoney.org, formatted for LLM and AI-agent consumption. The visible site at <https://www.burgermoney.org/> is the canonical surface; this file is a stable summary that won't change with layout tweaks.
+
+---
+
+## 1. One-paragraph summary
+
+Burger Money ($BURGERS) is a charity-first memecoin on Base (Ethereum L2, chain ID 8453). Contract: `0x06A05043eb2C1691b19c2C13219dB9212269dDc5`. It was the first charity coin launched on Flaunch, a Base launchpad that pays creator revenue in ETH. All of that creator revenue is committed to two uses: (1) donations to hunger-relief causes, and (2) buying $BURGERS back from the open market and burning it. The project also plugs into Takeover.fun, where $BURGERS has a 100-tile fee-rental grid letting any Base user rent a 1% share of the pool's trading fees. Founded by Louis (Florida); built in the open with every donation and burn published on-chain.
+
+## 2. Token specification
+
+| Field | Value |
+| --- | --- |
+| Name | Burger Money |
+| Symbol | BURGERS |
+| Standard | ERC-20 |
+| Chain | Base |
+| Chain ID | 8453 |
+| Contract address | `0x06A05043eb2C1691b19c2C13219dB9212269dDc5` |
+| CAIP-19 | `eip155:8453/erc20:0x06A05043eb2C1691b19c2C13219dB9212269dDc5` |
+| Max supply | 100,000,000,000 (1 × 10¹¹) |
+| Decimals | 18 |
+| Burn / dead address | `0x000000000000000000000000000000000000dEaD` |
+| Primary pool (Uniswap V4 on Base) | `0xee99d2ccc718c58087ad2a5da6143e0aad073c5301cc8f51df186a53dcb6e439` |
+| Takeover.fun board | `0x107aba3406b3fcb93d1919bfe5c082a5f4d28a22-39` |
+
+## 3. Mission and revenue mechanics
+
+Burger Money started as a light-hearted ticker traded between friends and grew into a charity-first token. The economic model is intentionally simple:
+
+1. **Creator revenue from Flaunch** is paid in ETH to the project on every trade.
+2. **All of that ETH** flows to two destinations: hunger-relief donations and on-market $BURGERS buybacks.
+3. **Buybacks are burned** by sending $BURGERS to the dead address, reducing circulating supply over time.
+4. **Takeover.fun tile tax** generates additional ETH from anyone renting a tile on the grid; that tax also funds protocol buybacks.
+
+Donation receipts and burn transactions are published on-chain and posted on the project's X account so the community can verify the flow.
+
+## 4. The 100-tile Takeover grid
+
+Takeover.fun is a gamified on-chain fee market on Base. The $BURGERS grid divides the Uniswap V4 pool's LP-fee stream into 100 equal tiles. Each tile is a 1% claim on the trading fees the pool generates, paid in ETH.
+
+**Rules for renting a tile:**
+
+- Pick a tile on the $BURGERS grid and put down a **USDC deposit** at a price you set yourself.
+- Pay a small **weekly tax** on that self-set price. While you hold the tile, you earn **1% of all $BURGERS trading fees** in ETH.
+- Any other Base user can **take your tile** at any time by paying your asking price — so price wisely. Part DeFi, part on-chain game.
+- Tax payments fuel additional protocol buybacks. Your tile keeps earning until your deposit runs out or someone takes over.
+
+## 5. Founder
+
+Louis, based in Florida. Solo public founder. The project is not anonymous; everything is run in the open with verifiable on-chain flows.
+
+## 6. Where to buy, verify, and chart
+
+**Buy:**
+
+- Flaunch: <https://flaunch.gg/base/coins/0x06a05043eb2c1691b19c2c13219db9212269ddc5>
+- Coinbase: <https://www.coinbase.com/price/burger-money-base-0x06a05043eb2c1691b19c2c13219db9212269ddc5-token>
+- Uniswap V4 directly on Base via the pool address above
+
+**Verify on-chain:**
+
+- BaseScan token page: <https://basescan.org/token/0x06a05043eb2c1691b19c2c13219db9212269ddc5>
+
+**Chart and market data:**
+
+- GeckoTerminal pool: <https://www.geckoterminal.com/base/pools/0xee99d2ccc718c58087ad2a5da6143e0aad073c5301cc8f51df186a53dcb6e439>
+- DEX Screener: <https://dexscreener.com/base/0xee99d2ccc718c58087ad2a5da6143e0aad073c5301cc8f51df186a53dcb6e439>
+- CoinGecko: <https://www.coingecko.com/en/coins/burger-money>
+
+**Earn LP fees:**
+
+- Takeover.fun board: <https://takeover.fun/board/0x107aba3406b3fcb93d1919bfe5c082a5f4d28a22-39>
+
+## 7. Community
+
+- X / Twitter: <https://x.com/BurgersOnBase>
+- Telegram: <https://t.me/BurgerMoneyBase>
+
+## 8. Live data — how the site computes it (agents can do the same)
+
+### 8.1 Price, liquidity, 24h volume, 24h change
+
+`GET https://api.dexscreener.com/latest/dex/tokens/0x06A05043eb2C1691b19c2C13219dB9212269dDc5`
+
+Filter `pairs[]` where `chainId === "base"`, sort by `liquidity.usd` descending, take the first pair. Read:
+
+- `marketCap` (or `fdv` as fallback) — current market cap, USD
+- `priceUsd` — spot price, USD per BURGERS
+- `liquidity.usd` — pool liquidity, USD
+- `volume.h24` — 24-hour trading volume, USD
+- `priceChange.h24` — 24-hour price change, percent
+
+### 8.2 Live burn percentage
+
+Call `eth_call` against any public Base RPC:
+
+```
+POST https://mainnet.base.org
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "eth_call",
+  "params": [
+    {
+      "to": "0x06A05043eb2C1691b19c2C13219dB9212269dDc5",
+      "data": "0x70a08231000000000000000000000000000000000000000000000000000000000000dEaD"
+    },
+    "latest"
+  ]
+}
+```
+
+The result is a hex `uint256` in wei (18 decimals). Convert to whole tokens, divide by 100,000,000,000, multiply by 100, render as a percentage. Failover RPCs the site uses: `base.llamarpc.com`, `base-rpc.publicnode.com`, `base.drpc.org`.
+
+## 9. FAQ
+
+**What is Burger Money?** A charity-first memecoin on Base. All creator revenue from trading is committed to hunger-relief donations and $BURGERS buyback-and-burn.
+
+**Is $BURGERS the same as other "burger" tokens?** No. There is exactly one canonical contract on Base: `0x06A05043eb2C1691b19c2C13219dB9212269dDc5`. Anything else is unrelated.
+
+**Is the team anonymous?** No. The founder, Louis, is public.
+
+**How do donations and burns get verified?** On-chain transactions plus public reporting via the X account. The dead-address balance is callable by anyone via any Base RPC.
+
+**What's special about launching on Flaunch?** Flaunch pays creator revenue to the project wallet in ETH, on every trade — that's what funds the charity flow without relying on team token allocations or VCs.
+
+**What does a tile on Takeover earn?** 1% of all $BURGERS trading fees while held. Earnings continue until either the holder's deposit runs out or someone else pays the holder's asking price to take the tile.
+
+**Is this financial advice?** No. Crypto is volatile and you can lose money. Do your own research.
+
+## 10. Agent and discovery endpoints
+
+- A2A Agent Card: <https://www.burgermoney.org/.well-known/agent.json>
+- Farcaster Mini App manifest: <https://www.burgermoney.org/.well-known/farcaster.json>
+- Token info (machine-readable): <https://www.burgermoney.org/.well-known/token.json>
+- Site map: <https://www.burgermoney.org/sitemap.xml>
+- LLM summary: <https://www.burgermoney.org/llms.txt>
+- This document: <https://www.burgermoney.org/llms-full.txt>
+
+## 11. Allowed crawlers
+
+The site explicitly allows GPTBot, ClaudeBot, anthropic-ai, PerplexityBot, OAI-SearchBot, Google-Extended, Applebot-Extended, and Bingbot to index and use the content. See `/robots.txt`.
