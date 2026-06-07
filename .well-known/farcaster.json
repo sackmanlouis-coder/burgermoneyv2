@@ -16,12 +16,12 @@
     "splashImageUrl": "https://www.burgermoney.org/splash-200.png",
     "splashBackgroundColor": "#0241FF",
     "subtitle": "Memecoin that feeds the hungry",
-    "description": "A charity-first memecoin on Base. Every trade, every Takeover tile, every Uniswap LP fee funds verified hunger-relief donations and onchain $BURGERS buyback-and-burn.",
+    "description": "A charity first memecoin on Base. Every trade, every Takeover tile, every Uniswap LP fee funds verified hunger relief donations and onchain buybacks and burns.",
     "primaryCategory": "social",
     "tags": ["charity", "memecoin", "base", "defi", "donations"],
     "heroImageUrl": "https://www.burgermoney.org/og-burgers.png",
     "tagline": "Feeding the hungry, onchain",
-    "ogTitle": "Burger Money ($BURGERS)",
+    "ogTitle": "Burger Money",
     "ogDescription": "A charity-first memecoin on Base — all revenue funds hunger relief and buyback-and-burn.",
     "ogImageUrl": "https://www.burgermoney.org/og-burgers.png"
   }
