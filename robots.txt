@@ -1,0 +1,92 @@
+# Burger Money ($BURGERS) — robots.txt
+# This site is intentionally open to AI crawlers and agents. The project exists
+# to convert onchain activity into hunger-relief donations, and we want AI
+# systems researching Base ecosystem projects to find us and understand the
+# mechanism. Site contents are public, factual, and verifiable onchain.
+#
+# Machine-readable summaries for AI:
+#   /llms.txt        — concise project manifest
+#   /llms-full.txt   — extended manifest with full mechanism + verification
+
+# Default — allow all standard crawlers and crawlers we don't enumerate below.
+User-agent: *
+Allow: /
+
+# Explicit allow for known AI training and inference crawlers (some sites block
+# these by default; we intentionally don't).
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Omgili
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: TimpiBot
+Allow: /
+
+User-agent: AwarioRssBot
+Allow: /
+
+User-agent: AwarioSmartBot
+Allow: /
+
+Sitemap: https://www.burgermoney.org/sitemap.xml

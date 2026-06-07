@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage — project overview, token info, primary CTAs -->
   <url>
     <loc>https://www.burgermoney.org/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-06-07</lastmod>
   </url>
+
+  <!-- Donations tracker — live onchain donation ledger and donor wall -->
+  <url>
+    <loc>https://www.burgermoney.org/donations.html</loc>
+    <lastmod>2026-06-07</lastmod>
+  </url>
+
+  <!-- Partners — aligned charity-first projects on Base -->
+  <url>
+    <loc>https://www.burgermoney.org/partners.html</loc>
+    <lastmod>2026-06-07</lastmod>
+  </url>
+
+  <!-- Agent-readable site manifests (linked from every page's <head>) -->
   <url>
     <loc>https://www.burgermoney.org/llms.txt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-06-07</lastmod>
   </url>
+
   <url>
     <loc>https://www.burgermoney.org/llms-full.txt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-06-07</lastmod>
   </url>
-  <url>
-    <loc>https://www.burgermoney.org/.well-known/agent.json</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.burgermoney.org/.well-known/token.json</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.burgermoney.org/.well-known/farcaster.json</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
 </urlset>
